@@ -306,6 +306,13 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
 
 /* ===== AVIS CLIENTS ELORIUM ===== */
 .reviews-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px}.review-summary,.review-form,.review-card{border:1px solid var(--softline);border-radius:20px;background:linear-gradient(145deg,rgba(201,168,106,.055),rgba(255,255,255,.012)),var(--panel);box-shadow:0 18px 50px rgba(0,0,0,.18)}.review-summary,.review-form{padding:28px}.review-score{font-family:Georgia,serif;font-size:3.2rem;color:var(--gold2);line-height:1}.stars,.star-picker{color:#f3c969;letter-spacing:.12em;font-size:1.35rem}.review-count{color:var(--muted);margin-top:8px}.review-form{display:grid;gap:13px}.review-form input,.review-form textarea{width:100%;padding:14px 15px;border:1px solid var(--softline);border-radius:13px;background:#101010;color:var(--ivory);outline:none}.review-form textarea{min-height:110px;resize:vertical}.review-form input:focus,.review-form textarea:focus{border-color:rgba(231,208,155,.45)}.star-picker{display:flex;gap:5px}.star-picker button{border:0;background:none;color:#6f6658;font-size:1.8rem;cursor:pointer;padding:0 2px}.star-picker button.active{color:#f3c969}.recommend-check{display:flex;align-items:center;gap:9px;color:#d7d0c4;font-size:.92rem}.reviews-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}.review-card{padding:22px}.review-card .review-name{font-weight:800;margin:8px 0 6px}.review-card p{color:var(--muted);font-size:.94rem}.review-reco{display:inline-block;margin-top:13px;color:var(--gold2);font-size:.82rem;font-weight:800}.review-empty{grid-column:1/-1;color:var(--muted);padding:18px 0}.review-note{color:#7f786e;font-size:.78rem}.review-success{display:none;color:#7bdc97;font-size:.9rem}.review-success.show{display:block}@media(max-width:900px){.reviews-grid,.reviews-list{grid-template-columns:1fr}}
+
+/* ===== BOUTON FACEBOOK ===== */
+.facebook-share-wrap{display:flex;justify-content:center;padding:10px 0 45px}
+.facebook-share-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;background:#1877F2;color:#fff;font-weight:800;box-shadow:0 12px 34px rgba(24,119,242,.25);transition:.25s}
+.facebook-share-btn:hover{transform:translateY(-2px);box-shadow:0 16px 42px rgba(24,119,242,.35)}
+.facebook-share-icon{font-family:Arial,sans-serif;font-size:1.35rem;font-weight:900;line-height:1}
+
 </style>
 </head>
 <body>
@@ -563,6 +570,13 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
  </div>
 </section>
 
+
+<div class="container facebook-share-wrap">
+  <a class="facebook-share-btn" id="facebookShareBtn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Partager Elorium Digital sur Facebook">
+    <span class="facebook-share-icon">f</span> Partager sur Facebook
+  </a>
+</div>
+
 <footer>
   <div class="container footerrow">
     <div>© 2026 Elorium Digital. Tous droits réservés.</div>
@@ -732,6 +746,16 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
  function get(){try{return JSON.parse(localStorage.getItem(key)||'[]')}catch(e){return []}}
  function render(){const a=get(), list=document.getElementById('reviewsList'), avg=a.length?a.reduce((n,r)=>n+r.rating,0)/a.length:0; document.getElementById('reviewAverage').textContent=a.length?avg.toFixed(1)+'/5':'—'; document.getElementById('reviewAverageStars').textContent=a.length?'★'.repeat(Math.round(avg))+'☆'.repeat(5-Math.round(avg)):'☆☆☆☆☆'; document.getElementById('reviewCount').textContent=a.length?(a.length+' avis client'+(a.length>1?'s':'')):'Aucun avis pour le moment'; list.innerHTML=a.length?a.slice().reverse().map(r=>`<article class="review-card"><div class="stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div><div class="review-name">${esc(r.name)}</div><p>${esc(r.text)}</p>${r.recommend?'<span class="review-reco">✓ Je recommande Elorium Digital</span>':''}</article>`).join(''):'<div class="review-empty">Soyez le premier à laisser un avis.</div>'}
  form.addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('reviewName').value.trim(), text=document.getElementById('reviewText').value.trim();if(!name||!text)return;const a=get();a.push({name,text,rating,recommend:document.getElementById('reviewRecommend').checked,date:Date.now()});localStorage.setItem(key,JSON.stringify(a));form.reset();rating=5;paint();document.getElementById('reviewRecommend').checked=true;document.getElementById('reviewSuccess').classList.add('show');setTimeout(()=>document.getElementById('reviewSuccess').classList.remove('show'),3000);render()}); render();
+})();
+</script>
+
+
+<script>
+(function(){
+  var btn=document.getElementById('facebookShareBtn');
+  if(btn){
+    btn.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href);
+  }
 })();
 </script>
 
