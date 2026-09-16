@@ -303,6 +303,9 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
 .elia-quick{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.elia-quick button{padding:10px;border-radius:12px;border:1px solid var(--line);background:#111;color:var(--ivory);cursor:pointer}.elia-quick button:hover{border-color:var(--gold)}
 .elia-form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--softline)}.elia-form input{flex:1;min-width:0;padding:12px;border-radius:999px;border:1px solid var(--softline);background:#181818;color:white;outline:none}.elia-form button{width:44px;height:44px;border:0;border-radius:50%;background:linear-gradient(135deg,var(--gold2),var(--gold));cursor:pointer;font-size:1.05rem}
 @media(max-width:600px){.elia-launch span{display:none}.elia-launch{padding:7px}.elia-chat{right:14px;bottom:88px}.elia-quick{grid-template-columns:1fr}}
+
+/* ===== AVIS CLIENTS ELORIUM ===== */
+.reviews-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px}.review-summary,.review-form,.review-card{border:1px solid var(--softline);border-radius:20px;background:linear-gradient(145deg,rgba(201,168,106,.055),rgba(255,255,255,.012)),var(--panel);box-shadow:0 18px 50px rgba(0,0,0,.18)}.review-summary,.review-form{padding:28px}.review-score{font-family:Georgia,serif;font-size:3.2rem;color:var(--gold2);line-height:1}.stars,.star-picker{color:#f3c969;letter-spacing:.12em;font-size:1.35rem}.review-count{color:var(--muted);margin-top:8px}.review-form{display:grid;gap:13px}.review-form input,.review-form textarea{width:100%;padding:14px 15px;border:1px solid var(--softline);border-radius:13px;background:#101010;color:var(--ivory);outline:none}.review-form textarea{min-height:110px;resize:vertical}.review-form input:focus,.review-form textarea:focus{border-color:rgba(231,208,155,.45)}.star-picker{display:flex;gap:5px}.star-picker button{border:0;background:none;color:#6f6658;font-size:1.8rem;cursor:pointer;padding:0 2px}.star-picker button.active{color:#f3c969}.recommend-check{display:flex;align-items:center;gap:9px;color:#d7d0c4;font-size:.92rem}.reviews-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}.review-card{padding:22px}.review-card .review-name{font-weight:800;margin:8px 0 6px}.review-card p{color:var(--muted);font-size:.94rem}.review-reco{display:inline-block;margin-top:13px;color:var(--gold2);font-size:.82rem;font-weight:800}.review-empty{grid-column:1/-1;color:var(--muted);padding:18px 0}.review-note{color:#7f786e;font-size:.78rem}.review-success{display:none;color:#7bdc97;font-size:.9rem}.review-success.show{display:block}@media(max-width:900px){.reviews-grid,.reviews-list{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -335,8 +338,6 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
       <div class="actions">
         <a class="btn btn-gold" href="#services">Découvrir les services</a>
         <a class="btn btn-outline" href="#packs">Voir les offres</a>
-        <a class="btn btn-outline" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href),'facebook-share','width=650,height=500'); return false;" aria-label="Partager ELORIUM DIGITAL sur Facebook">ⓕ Partager sur Facebook</a>
-        <button class="btn btn-outline" id="likeBtn" type="button" onclick="toggleEloriumLike()" aria-pressed="false">♡ J’aime <span id="likeCount">0</span></button>
       </div>
     </div>
 
@@ -551,6 +552,17 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
   </div>
 </section>
 
+
+<section id="avis">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Votre expérience compte</div><h2>Avis clients</h2><p>Partagez votre expérience avec Elorium Digital et recommandez nos services.</p></div>
+  <div class="reviews-grid">
+   <div class="review-summary"><div class="review-score" id="reviewAverage">—</div><div class="stars" id="reviewAverageStars">☆☆☆☆☆</div><div class="review-count" id="reviewCount">Aucun avis pour le moment</div><p style="color:var(--muted);margin-top:18px">Les avis affichés ci-dessous sont déposés par les visiteurs depuis ce navigateur.</p></div>
+   <form class="review-form" id="reviewForm"><h3>Laisser un avis</h3><input id="reviewName" maxlength="40" required placeholder="Votre prénom ou nom"><div><small style="color:var(--muted)">Votre note</small><div class="star-picker" id="starPicker" aria-label="Choisir une note sur 5"><button type="button" data-star="1">★</button><button type="button" data-star="2">★</button><button type="button" data-star="3">★</button><button type="button" data-star="4">★</button><button type="button" data-star="5">★</button></div></div><textarea id="reviewText" maxlength="500" required placeholder="Votre commentaire..."></textarea><label class="recommend-check"><input type="checkbox" id="reviewRecommend" checked> Je recommande Elorium Digital</label><button class="btn btn-gold" type="submit">Publier mon avis</button><div class="review-success" id="reviewSuccess">Merci ! Votre avis a bien été ajouté.</div><div class="review-note">Aucun avis fictif n’est ajouté automatiquement.</div></form>
+  </div><div class="reviews-list" id="reviewsList"></div>
+ </div>
+</section>
+
 <footer>
   <div class="container footerrow">
     <div>© 2026 Elorium Digital. Tous droits réservés.</div>
@@ -713,24 +725,15 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
 </style>
 
 <script>
-(function(){
-  const liked = localStorage.getItem('elorium-liked') === '1';
-  const count = Number(localStorage.getItem('elorium-like-count') || 0);
-  const btn = document.getElementById('likeBtn');
-  const counter = document.getElementById('likeCount');
-  if(counter) counter.textContent = count;
-  if(btn && liked){ btn.innerHTML = '♥ J’aime <span id="likeCount">'+count+'</span>'; btn.setAttribute('aria-pressed','true'); }
+(()=>{
+ const key='elorium_reviews_v1', form=document.getElementById('reviewForm'), picker=document.getElementById('starPicker'); if(!form||!picker)return; let rating=5;
+ const buttons=[...picker.querySelectorAll('button')], esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+ function paint(){buttons.forEach(b=>b.classList.toggle('active',Number(b.dataset.star)<=rating))} paint(); buttons.forEach(b=>b.onclick=()=>{rating=Number(b.dataset.star);paint()});
+ function get(){try{return JSON.parse(localStorage.getItem(key)||'[]')}catch(e){return []}}
+ function render(){const a=get(), list=document.getElementById('reviewsList'), avg=a.length?a.reduce((n,r)=>n+r.rating,0)/a.length:0; document.getElementById('reviewAverage').textContent=a.length?avg.toFixed(1)+'/5':'—'; document.getElementById('reviewAverageStars').textContent=a.length?'★'.repeat(Math.round(avg))+'☆'.repeat(5-Math.round(avg)):'☆☆☆☆☆'; document.getElementById('reviewCount').textContent=a.length?(a.length+' avis client'+(a.length>1?'s':'')):'Aucun avis pour le moment'; list.innerHTML=a.length?a.slice().reverse().map(r=>`<article class="review-card"><div class="stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div><div class="review-name">${esc(r.name)}</div><p>${esc(r.text)}</p>${r.recommend?'<span class="review-reco">✓ Je recommande Elorium Digital</span>':''}</article>`).join(''):'<div class="review-empty">Soyez le premier à laisser un avis.</div>'}
+ form.addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('reviewName').value.trim(), text=document.getElementById('reviewText').value.trim();if(!name||!text)return;const a=get();a.push({name,text,rating,recommend:document.getElementById('reviewRecommend').checked,date:Date.now()});localStorage.setItem(key,JSON.stringify(a));form.reset();rating=5;paint();document.getElementById('reviewRecommend').checked=true;document.getElementById('reviewSuccess').classList.add('show');setTimeout(()=>document.getElementById('reviewSuccess').classList.remove('show'),3000);render()}); render();
 })();
-function toggleEloriumLike(){
-  const liked = localStorage.getItem('elorium-liked') === '1';
-  let count = Number(localStorage.getItem('elorium-like-count') || 0);
-  count = liked ? Math.max(0,count-1) : count+1;
-  localStorage.setItem('elorium-liked', liked ? '0' : '1');
-  localStorage.setItem('elorium-like-count', String(count));
-  const btn = document.getElementById('likeBtn');
-  btn.innerHTML = (liked ? '♡' : '♥') + ' J’aime <span id="likeCount">'+count+'</span>';
-  btn.setAttribute('aria-pressed', liked ? 'false' : 'true');
-}
 </script>
+
 </body>
 </html>
