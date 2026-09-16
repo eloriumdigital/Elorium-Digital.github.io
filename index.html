@@ -736,6 +736,45 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
 <style>
 .elia-pay-link{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:999px;background:linear-gradient(135deg,#e7d09b,#c9a86a);color:#0d0d0d!important;font-weight:800;text-decoration:none!important;box-shadow:0 10px 28px rgba(201,168,106,.18);transition:.2s}
 .elia-pay-link:hover{transform:translateY(-1px);box-shadow:0 14px 32px rgba(201,168,106,.26)}
+
+/* ===== OPTIMISATION MOBILE ELORIUM DIGITAL ===== */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:88px}
+img,video,iframe{max-width:100%;height:auto}
+input,textarea,select,button{font:inherit}
+@media(max-width:700px){
+  .container{width:min(100% - 28px,1180px)}
+  header .nav{min-height:72px;gap:10px}
+  .brand{font-size:.92rem;white-space:nowrap}
+  .brand-logo{width:38px;height:38px}
+  header .btn-outline{padding:10px 12px;font-size:.78rem}
+  .hero{padding-top:48px;padding-bottom:48px}
+  .hero-grid{gap:28px}
+  .hero h1{font-size:clamp(2.1rem,11vw,3.4rem);line-height:1.02;overflow-wrap:anywhere}
+  .hero .lead{font-size:1rem}
+  .actions{display:grid;grid-template-columns:1fr;gap:10px}
+  .actions .btn{width:100%;justify-content:center;text-align:center}
+  section{padding-top:54px;padding-bottom:54px}
+  .section-head h2{font-size:clamp(1.8rem,9vw,2.6rem)}
+  .service,.pack,.step,.faq,.contactitem,.review-summary,.review-form,.review-card{padding:20px}
+  .services,.packs,.steps,.faq-grid,.reviews-grid,.reviews-list{grid-template-columns:1fr!important;gap:14px}
+  .contact{grid-template-columns:1fr!important;gap:18px}
+  .footerrow{flex-direction:column;gap:10px}
+  .visit-counter-box{min-width:0;width:100%}
+  .facebook-share-btn{width:100%;justify-content:center;text-align:center}
+  .elia-chat{left:14px;right:14px;width:auto;max-height:70vh}
+  .elia-launch{right:14px;bottom:14px}
+  .elia-head img{width:50px;height:50px}
+  .elia-body{max-height:43vh}
+  .elia-form{gap:6px}
+  .elia-form input{font-size:16px}
+  .review-form input,.review-form textarea{font-size:16px}
+}
+@media(max-width:390px){
+  .container{width:min(100% - 20px,1180px)}
+  header .btn-outline{font-size:.72rem;padding:9px 10px}
+  .brand{font-size:.82rem}
+  .brand-logo{width:34px;height:34px}
+}
 </style>
 
 <script>
@@ -756,6 +795,24 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
   if(btn){
     btn.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href);
   }
+})();
+</script>
+
+
+<!-- Musique douce d’ambiance : démarre automatiquement si le navigateur l’autorise.
+     Remplace musique-douce.mp3 par ton fichier MP3 dans le même dossier que index.html. -->
+<audio id="eloriumAmbientMusic" autoplay loop preload="auto" playsinline>
+  <source src="musique-douce.mp3" type="audio/mpeg">
+</audio>
+<script>
+(function(){
+  const music=document.getElementById('eloriumAmbientMusic');
+  music.volume=0.16;
+  const startMusic=()=>music.play().catch(()=>{});
+  startMusic();
+  ['click','touchstart','keydown','scroll'].forEach(evt=>
+    window.addEventListener(evt,startMusic,{once:true,passive:true})
+  );
 })();
 </script>
 
