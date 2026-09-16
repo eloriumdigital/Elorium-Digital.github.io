@@ -336,6 +336,7 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
         <a class="btn btn-gold" href="#services">Découvrir les services</a>
         <a class="btn btn-outline" href="#packs">Voir les offres</a>
         <a class="btn btn-outline" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href),'facebook-share','width=650,height=500'); return false;" aria-label="Partager ELORIUM DIGITAL sur Facebook">ⓕ Partager sur Facebook</a>
+        <button class="btn btn-outline" id="likeBtn" type="button" onclick="toggleEloriumLike()" aria-pressed="false">♡ J’aime <span id="likeCount">0</span></button>
       </div>
     </div>
 
@@ -710,5 +711,26 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
 .elia-pay-link{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:999px;background:linear-gradient(135deg,#e7d09b,#c9a86a);color:#0d0d0d!important;font-weight:800;text-decoration:none!important;box-shadow:0 10px 28px rgba(201,168,106,.18);transition:.2s}
 .elia-pay-link:hover{transform:translateY(-1px);box-shadow:0 14px 32px rgba(201,168,106,.26)}
 </style>
+
+<script>
+(function(){
+  const liked = localStorage.getItem('elorium-liked') === '1';
+  const count = Number(localStorage.getItem('elorium-like-count') || 0);
+  const btn = document.getElementById('likeBtn');
+  const counter = document.getElementById('likeCount');
+  if(counter) counter.textContent = count;
+  if(btn && liked){ btn.innerHTML = '♥ J’aime <span id="likeCount">'+count+'</span>'; btn.setAttribute('aria-pressed','true'); }
+})();
+function toggleEloriumLike(){
+  const liked = localStorage.getItem('elorium-liked') === '1';
+  let count = Number(localStorage.getItem('elorium-like-count') || 0);
+  count = liked ? Math.max(0,count-1) : count+1;
+  localStorage.setItem('elorium-liked', liked ? '0' : '1');
+  localStorage.setItem('elorium-like-count', String(count));
+  const btn = document.getElementById('likeBtn');
+  btn.innerHTML = (liked ? '♡' : '♥') + ' J’aime <span id="likeCount">'+count+'</span>';
+  btn.setAttribute('aria-pressed', liked ? 'false' : 'true');
+}
+</script>
 </body>
 </html>
