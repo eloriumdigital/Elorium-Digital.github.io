@@ -522,6 +522,7 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
           <div class="hours-lines">Lundi au vendredi : 9h – 20h<br>Samedi : Fermé<br>Dimanche : Fermé</div>
         </div>
         <a class="btn btn-gold" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Demande%20de%20devis%20-%20Elorium%20Digital">Me contacter par Gmail</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://buy.stripe.com/3cI3cv9sL3Gudlg8tG7ss02">💳 Payer en ligne</a>
       </div>
     </div>
   </div>
@@ -536,6 +537,17 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
     <strong id="visitCount">1</strong>
   </div>
 </div>
+
+
+<section id="facturation-electronique">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Facturation</div>
+      <h2>Facturation électronique</h2>
+      <p>Depuis le <strong>1er septembre 2026</strong>, ELORIUM DIGITAL utilise la <strong>facturation électronique</strong> pour ses prestations. Vos factures sont établies et transmises au format électronique pour une gestion plus simple, rapide et professionnelle.</p>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="container footerrow">
@@ -652,6 +664,7 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
       <button type="button" data-elia="horaires">🕘 Horaires</button>
       <button type="button" data-elia="contact">✉️ Contact</button>
       <button type="button" data-elia="devis">📝 Devis</button>
+      <a href="https://buy.stripe.com/3cI3cv9sL3Gudlg8tG7ss02" target="_blank" rel="noopener" style="text-decoration:none"><button type="button">💳 Payer en ligne</button></a>
     </div>
   </div>
   <form class="elia-form" id="eliaForm">
@@ -681,8 +694,9 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
     if(/horaire|ouvert|ferme/.test(q)){add('Horaires : lundi au vendredi de 9h à 20h. Samedi et dimanche : fermé.');go('#contact');return;}
     if(/contact|email|gmail/.test(q)){add('Vous pouvez contacter Elorium Digital par e-mail à Elorium.digital@gmail.com. Je vous emmène à la section Contact.');go('#contact');return;}
     if(/devis|commande|projet/.test(q)){add('Pour un devis, rendez-vous dans la section Contact et indiquez le type de projet, le pack souhaité et vos besoins.');go('#contact');return;}
+    if(/paiement|payer|stripe|regler|reglement|carte bancaire|cb/.test(q)){add('Vous pouvez régler votre commande en toute sécurité avec Stripe.<br><br><a href="https://buy.stripe.com/3cI3cv9sL3Gudlg8tG7ss02" target="_blank" rel="noopener" class="elia-pay-link">💳 Accéder au paiement sécurisé</a>');return;}
     if(/accueil|haut|home/.test(q)){add('Je vous ramène à l’accueil.');go('#accueil');return;}
-    add('Je peux vous aider pour les services digitaux, le dépannage PC, les tarifs PC, les horaires, le contact ou un devis.');
+    add('Je peux vous aider pour les services digitaux, le dépannage PC, les tarifs PC, les horaires, le contact, un devis ou le paiement sécurisé.');
   }
   launch.addEventListener('click',()=>chat.classList.toggle('open'));
   close.addEventListener('click',()=>chat.classList.remove('open'));
