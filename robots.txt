@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eloriumdigital.github.io/Elorium-Digital.github.io/sitemap.xml
