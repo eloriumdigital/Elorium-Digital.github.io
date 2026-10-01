@@ -342,8 +342,35 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
   .service:hover,.step:hover,.faq:hover,.contactitem:hover,.pack:hover{transform:none}
 }
 </style>
+
+<style>
+/* ===== HALLOWEEN ELORIUM 2026 ===== */
+:root{--halloween:#ff6a00;--halloween2:#ff9d21;--purple:#6d28d9}
+body{background:radial-gradient(circle at 15% 5%,rgba(255,106,0,.13),transparent 25%),radial-gradient(circle at 88% 12%,rgba(109,40,217,.12),transparent 28%),linear-gradient(180deg,#080407,#0b0708 50%,#060406)!important}
+header{border-bottom-color:rgba(255,106,0,.22)}
+.hero{overflow:hidden}
+.hero:after{content:"🎃";position:absolute;right:4%;top:12%;font-size:clamp(70px,10vw,150px);filter:drop-shadow(0 0 28px rgba(255,106,0,.55));opacity:.88;z-index:-1;animation:pumpkinFloat 4s ease-in-out infinite alternate}
+.hero-grid:before{content:"🦇   🦇      🦇";position:absolute;left:8%;top:45px;font-size:clamp(18px,3vw,34px);letter-spacing:18px;opacity:.72;animation:batsFly 8s ease-in-out infinite alternate;pointer-events:none}
+.hero-card,.service,.pack,.step,.faq,.contact,.photo-price-card,.visit-counter-box{border-color:rgba(255,106,0,.20)!important;box-shadow:0 18px 60px rgba(0,0,0,.34),0 0 22px rgba(255,106,0,.035)}
+.hero-card{background:linear-gradient(155deg,rgba(255,106,0,.11),transparent 32%),linear-gradient(330deg,rgba(109,40,217,.08),transparent 38%),#120d10}
+.eyebrow,.service b,.step b,.label{color:var(--halloween2)!important}
+h1 em,.price,.photo-price,.visit-counter-box strong{color:#ffb14a!important}
+.btn-gold{background:linear-gradient(135deg,#ffb347,#ff6500)!important;color:#160b03!important;box-shadow:0 12px 34px rgba(255,106,0,.24)!important}
+.navlinks a:after,.section-head h2:after,.scroll-progress{background:linear-gradient(90deg,#ff6500,#ffb347)!important}
+.halloween-top{position:relative;padding:11px 15px;text-align:center;background:linear-gradient(90deg,#210b05,#4b1605,#210b05);border-bottom:1px solid rgba(255,138,32,.35);color:#ffd3a0;font-weight:800;letter-spacing:.08em;font-size:.8rem;overflow:hidden}
+.halloween-top:before,.halloween-top:after{content:"🕸️";position:absolute;top:-8px;font-size:38px;opacity:.7}.halloween-top:before{left:8px}.halloween-top:after{right:8px;transform:scaleX(-1)}
+.halloween-decor{position:fixed;inset:0;pointer-events:none;z-index:49;overflow:hidden}.halloween-decor .moon{position:absolute;right:-50px;top:120px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ffd36c,#ff8a00 55%,#d84900);box-shadow:0 0 60px rgba(255,119,0,.28);opacity:.18}.halloween-decor .fog{position:absolute;left:-10%;bottom:0;width:120%;height:120px;background:linear-gradient(transparent,rgba(180,165,190,.07),transparent);filter:blur(18px);animation:fogMove 10s ease-in-out infinite alternate}
+@keyframes pumpkinFloat{to{transform:translateY(16px) rotate(4deg)}}
+@keyframes batsFly{to{transform:translate(80px,18px)}}
+@keyframes fogMove{to{transform:translateX(7%)}}
+@media(max-width:700px){.halloween-top{font-size:.68rem;padding:9px 42px}.hero:after{right:-22px;top:6%;opacity:.45}.hero-grid:before{top:18px;left:3%;letter-spacing:5px}.halloween-decor .moon{width:110px;height:110px;right:-35px}}
+@media(prefers-reduced-motion:reduce){.hero:after,.hero-grid:before,.halloween-decor .fog{animation:none!important}}
+</style>
 </head>
 <body>
+<div class="halloween-top">🎃 HALLOWEEN CHEZ ELORIUM DIGITAL • CRÉATIONS QUI FONT FRISSONNER 👻</div>
+<div class="halloween-decor" aria-hidden="true"><div class="moon"></div><div class="fog"></div></div>
+
 
 <header>
   <div class="container">
