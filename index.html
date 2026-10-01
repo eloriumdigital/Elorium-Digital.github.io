@@ -323,6 +323,15 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
 .photo-cta{margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:25px 28px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.018)}.photo-cta p{color:var(--muted)}
 @media(max-width:900px){.photo-pricing{grid-template-columns:1fr}.photo-price-card p{min-height:auto}.photo-cta{align-items:flex-start;flex-direction:column}}
 
+/* ===== FORMULAIRE CONTACT ELORIUM ===== */
+.elorium-contact-form{display:grid;gap:13px;padding:20px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.018)}
+.elorium-contact-form label{display:grid;gap:6px;color:#d9d2c6;font-size:.86rem;font-weight:700}
+.elorium-contact-form input,.elorium-contact-form select,.elorium-contact-form textarea{width:100%;padding:13px 14px;border:1px solid var(--softline);border-radius:12px;background:#101010;color:var(--ivory);outline:none}
+.elorium-contact-form textarea{min-height:130px;resize:vertical}
+.elorium-contact-form input:focus,.elorium-contact-form select:focus,.elorium-contact-form textarea:focus{border-color:rgba(231,208,155,.5)}
+.elorium-contact-form .btn{width:100%;cursor:pointer}
+.contact-form-note{font-size:.76rem!important;color:#8f887d!important;margin:0!important}
+
 </style>
 </head>
 <body>
@@ -565,9 +574,28 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
           <div class="hours-status"><span id="hoursDot" class="hours-dot"></span><strong id="hoursStatus">Vérification…</strong></div>
           <div class="hours-lines">Lundi au vendredi : 9h – 20h<br>Samedi : Fermé<br>Dimanche : Fermé</div>
         </div>
-        <a class="btn btn-gold" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Demande%20de%20devis%20-%20Elorium%20Digital">Me contacter par Gmail</a>
-        <a class="btn btn-outline" target="_blank" rel="noopener noreferrer" href="https://buy.stripe.com/eVq00jeN5dh480WdO07ss05" aria-label="Paiement sécurisé par Stripe">🔒 Paiement sécurisé</a>
-        
+        <form class="elorium-contact-form" action="https://formsubmit.co/Elorium.digital@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nouvelle demande - Elorium Digital">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <label>Nom / Prénom<input type="text" name="Nom" required maxlength="80" placeholder="Votre nom"></label>
+          <label>E-mail<input type="email" name="Email" required maxlength="120" placeholder="votre@email.fr"></label>
+          <label>Service souhaité
+            <select name="Service" required>
+              <option value="" selected disabled>Choisissez un service</option>
+              <option>Création de site internet</option>
+              <option>Logo / identité visuelle</option>
+              <option>Communication / réseaux sociaux</option>
+              <option>Retouche photo</option>
+              <option>Dépannage PC</option>
+              <option>Autre demande</option>
+            </select>
+          </label>
+          <label>Votre message<textarea name="Message" required maxlength="1500" placeholder="Décrivez votre projet ou votre demande..."></textarea></label>
+          <button class="btn btn-gold" type="submit">Envoyer ma demande</button>
+          <p class="contact-form-note">Votre demande sera transmise à Elorium Digital. Une confirmation du service d’envoi peut être nécessaire lors de la première utilisation.</p>
+        </form>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Demande%20de%20devis%20-%20Elorium%20Digital">Ou me contacter par Gmail</a>
       </div>
     </div>
   </div>
@@ -759,8 +787,8 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
     if(/tarif|prix|pack/.test(q)){add('Pour les services digitaux, les packs commencent à 79 € : Essentiel 79 €, Réseaux 129 €, Site Vitrine 249 €, Business 399 € et Premium 599 €. Pour le dépannage informatique, demandez « tarifs PC ».');go('#packs');return;}
     if(/service|site|logo|reseau|communication/.test(q)){add('Elorium Digital propose des services digitaux (création de sites internet, identité visuelle, visuels pour réseaux sociaux et supports de communication) ainsi que du dépannage informatique PC : diagnostic, optimisation, suppression de virus et logiciels malveillants, nettoyage Windows et mises à jour des pilotes.');go('#services');return;}
     if(/horaire|ouvert|ferme/.test(q)){add('Horaires : lundi au vendredi de 9h à 20h. Samedi et dimanche : fermé.');go('#contact');return;}
-    if(/contact|email|gmail/.test(q)){add('Vous pouvez contacter Elorium Digital par e-mail à Elorium.digital@gmail.com. Je vous emmène à la section Contact.');go('#contact');return;}
-    if(/devis|commande|projet/.test(q)){add('Pour un devis, rendez-vous dans la section Contact et indiquez le type de projet, le pack souhaité et vos besoins.');go('#contact');return;}
+    if(/contact|email|gmail/.test(q)){add('Vous pouvez envoyer directement votre demande avec le formulaire de contact. Je vous emmène à la section Contact.');go('#contact');return;}
+    if(/devis|commande|projet/.test(q)){add('Pour un devis, remplissez le formulaire de contact avec votre nom, votre e-mail, le service souhaité et votre besoin. Je vous emmène au formulaire.');go('#contact');return;}
     if(/accueil|haut|home/.test(q)){add('Je vous ramène à l’accueil.');go('#accueil');return;}
     add('Je peux vous aider pour les services digitaux, la retouche photo, les tarifs photo, le dépannage PC, les tarifs PC, les horaires, le contact ou un devis.');
   }
