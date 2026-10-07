@@ -474,6 +474,29 @@ header .brand-logo{
 }
 </style>
 
+<style>
+/* Contact visible, sans modifier le thème Halloween */
+.contact-reassurance{margin-top:16px;color:#e0cbb6;font-size:.9rem;line-height:1.6}
+.mobile-contact-cta{display:none;position:fixed;left:14px;right:14px;bottom:12px;z-index:119;padding:14px 18px;border-radius:999px;text-align:center;font-weight:900;color:#160b03;background:linear-gradient(135deg,#ffb347,#ff6500);box-shadow:0 12px 38px rgba(0,0,0,.55);border:1px solid rgba(255,190,105,.5)}
+#contact{scroll-margin-top:100px}
+@media(max-width:700px){body{padding-bottom:85px}.mobile-contact-cta{display:block}.elia-launch{bottom:83px}.elia-chat{bottom:153px;max-height:60vh}.hero .actions .btn{width:100%}.contact-reassurance{font-size:.82rem}}
+</style>
+
+<style>
+/* ===== CONTACT TOUTES MESSAGERIES ===== */
+.universal-contact-box{
+  padding:20px;margin-bottom:16px;border:1px solid var(--line);border-radius:18px;
+  background:linear-gradient(135deg,rgba(255,106,0,.08),rgba(255,255,255,.018));
+}
+.universal-contact-box strong{display:block;font-size:1.08rem;color:var(--gold2);margin-bottom:6px}
+.universal-contact-box p{margin:0 0 14px!important}
+.universal-contact-actions{display:flex;gap:10px;flex-wrap:wrap}
+.universal-contact-actions .btn{flex:1;min-width:210px;cursor:pointer}
+.universal-contact-box small{display:block;margin-top:12px;color:var(--muted);word-break:break-all}
+.copy-email-btn.copied{border-color:#55d47c;color:#7bdc97}
+@media(max-width:700px){.universal-contact-actions{flex-direction:column}.universal-contact-actions .btn{width:100%;min-width:0}}
+</style>
+
 </head>
 <body>
 <div class="promo-halloween" role="status">
@@ -495,7 +518,7 @@ header .brand-logo{
         <a href="#packs">Packs</a>
         <a href="#contact">Contact</a>
       </div>
-      <a class="btn btn-outline" href="#contact">Demander un devis</a>
+      <a class="btn btn-outline" href="#contact">Devis gratuit</a>
     </nav>
   </div>
 </header>
@@ -511,9 +534,10 @@ header .brand-logo{
         Elorium Digital crée des sites internet, identités visuelles et supports de communication haut de gamme pour valoriser votre activité avec une image professionnelle.
       </p>
       <div class="actions">
-        <a class="btn btn-gold" href="#services">Découvrir les services</a>
-        <a class="btn btn-outline" href="#packs">Voir les offres</a>
+        <a class="btn btn-gold" href="#contact">💬 Demander mon devis gratuit</a>
+        <a class="btn btn-outline" href="#services">Découvrir les services</a>
       </div>
+      <p class="contact-reassurance">✓ Devis gratuit et sans engagement · ✓ Demande simple en quelques clics</p>
     </div>
 
     <div class="hero-card">
@@ -552,31 +576,31 @@ header .brand-logo{
       <article class="pack">
         <div class="label">Essentiel</div><div class="price">79 €</div><h3>Pack Essentiel</h3>
         <ul><li>1 logo simple</li><li>1 carte de visite</li><li>3 visuels réseaux sociaux</li></ul>
-        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Pack%20Essentiel%20-%2079%20euros">Choisir ce pack</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="mailto:Elorium.digital@gmail.com?subject=Pack%20Essentiel%20-%2079%20euros&body=Bonjour%20Elorium%20Digital%2C%0A%0AJe%20souhaite%20obtenir%20des%20informations%20/%20un%20devis.">Choisir ce pack</a>
       </article>
 
       <article class="pack">
         <div class="label">Réseaux</div><div class="price">129 €</div><h3>Pack Réseaux</h3>
         <ul><li>1 bannière</li><li>6 visuels réseaux sociaux</li><li>2 stories</li><li>1 photo de profil</li></ul>
-        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Pack%20R%C3%A9seaux%20-%20129%20euros">Choisir ce pack</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="mailto:Elorium.digital@gmail.com?subject=Pack%20R%C3%A9seaux%20-%20129%20euros&body=Bonjour%20Elorium%20Digital%2C%0A%0AJe%20souhaite%20obtenir%20des%20informations%20/%20un%20devis.">Choisir ce pack</a>
       </article>
 
       <article class="pack featured">
         <div class="label">Site web</div><div class="price">249 €</div><h3>Pack Site Vitrine</h3>
         <ul><li>Site professionnel 1 page</li><li>Version mobile</li><li>Boutons de contact</li><li>Coordonnées intégrées</li></ul>
-        <a class="btn btn-gold" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Pack%20Site%20Vitrine%20-%20249%20euros">Choisir ce pack</a>
+        <a class="btn btn-gold" target="_blank" rel="noopener" href="mailto:Elorium.digital@gmail.com?subject=Pack%20Site%20Vitrine%20-%20249%20euros&body=Bonjour%20Elorium%20Digital%2C%0A%0AJe%20souhaite%20obtenir%20des%20informations%20/%20un%20devis.">Choisir ce pack</a>
       </article>
 
       <article class="pack">
         <div class="label">Business</div><div class="price">399 €</div><h3>Pack Business</h3>
         <ul><li>Site jusqu’à 5 pages</li><li>1 logo</li><li>1 carte de visite</li><li>5 visuels réseaux sociaux</li><li>Formulaire de contact</li></ul>
-        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Pack%20Business%20-%20399%20euros">Choisir ce pack</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="mailto:Elorium.digital@gmail.com?subject=Pack%20Business%20-%20399%20euros&body=Bonjour%20Elorium%20Digital%2C%0A%0AJe%20souhaite%20obtenir%20des%20informations%20/%20un%20devis.">Choisir ce pack</a>
       </article>
 
       <article class="pack">
         <div class="label">Premium</div><div class="price">599 €</div><h3>Pack Premium</h3>
         <ul><li>Site complet</li><li>Identité visuelle</li><li>10 visuels réseaux sociaux</li><li>Flyers et bannière</li><li>Accompagnement de lancement</li></ul>
-        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Pack%20Premium%20-%20599%20euros">Choisir ce pack</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="mailto:Elorium.digital@gmail.com?subject=Pack%20Premium%20-%20599%20euros&body=Bonjour%20Elorium%20Digital%2C%0A%0AJe%20souhaite%20obtenir%20des%20informations%20/%20un%20devis.">Choisir ce pack</a>
       </article>
     </div>
   </div>
@@ -602,7 +626,7 @@ header .brand-logo{
       <article class="photo-price-card photo-pack"><div class="photo-icon">🔥</div><h3>Pack 5 photos</h3><p>Une formule avantageuse pour une petite série.</p><div class="photo-price">35 €</div></article>
       <article class="photo-price-card photo-pack"><div class="photo-icon">👑</div><h3>Pack 10 photos</h3><p>Le pack complet pour restaurer toute une sélection.</p><div class="photo-price">60 €</div></article>
     </div>
-    <div class="photo-cta"><div><h3>Une photo à retoucher ?</h3><p>Envoyez votre photo et décrivez la retouche souhaitée pour recevoir un devis.</p></div><a class="btn btn-gold" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Demande%20retouche%20photo">Envoyer ma photo</a></div>
+    <div class="photo-cta"><div><h3>Une photo à retoucher ?</h3><p>Envoyez votre photo et décrivez la retouche souhaitée pour recevoir un devis.</p></div><a class="btn btn-gold" target="_blank" rel="noopener" href="mailto:Elorium.digital@gmail.com?subject=Demande%20retouche%20photo&body=Bonjour%20Elorium%20Digital%2C%0A%0AJe%20souhaite%20obtenir%20des%20informations%20/%20un%20devis.">Envoyer ma photo</a></div>
   </div>
 </section>
 
@@ -722,7 +746,18 @@ header .brand-logo{
           <div class="hours-status"><span id="hoursDot" class="hours-dot"></span><strong id="hoursStatus">Vérification…</strong></div>
           <div class="hours-lines">Lundi au vendredi : 9h – 20h<br>Samedi : Fermé<br>Dimanche : Fermé</div>
         </div>
-        <form class="elorium-contact-form" action="https://formsubmit.co/Elorium.digital@gmail.com" method="POST">
+        
+<div class="universal-contact-box">
+  <strong>📩 Contactez-moi avec votre messagerie préférée</strong>
+  <p>Gmail, Outlook, Yahoo, Orange, Apple Mail ou toute autre application de messagerie.</p>
+  <div class="universal-contact-actions">
+    <a class="btn btn-gold" href="mailto:Elorium.digital@gmail.com?subject=Demande%20de%20devis%20%E2%80%94%20Elorium%20Digital">✉️ Ouvrir ma messagerie</a>
+    <button class="btn btn-outline copy-email-btn" type="button" data-email="Elorium.digital@gmail.com">📋 Copier l’adresse e-mail</button>
+  </div>
+  <small>Elorium.digital@gmail.com</small>
+</div>
+
+<form class="elorium-contact-form" action="https://formsubmit.co/Elorium.digital@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="Nouvelle demande - Elorium Digital">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
@@ -740,10 +775,10 @@ header .brand-logo{
             </select>
           </label>
           <label>Votre message<textarea name="Message" required maxlength="1500" placeholder="Décrivez votre projet ou votre demande..."></textarea></label>
-          <button class="btn btn-gold" type="submit">Envoyer ma demande</button>
+          <button class="btn btn-gold" type="submit">💬 Envoyer ma demande de devis gratuit</button>
           <p class="contact-form-note">Votre demande sera transmise à Elorium Digital. Une confirmation du service d’envoi peut être nécessaire lors de la première utilisation.</p>
         </form>
-        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Demande%20de%20devis%20-%20Elorium%20Digital">Ou me contacter par Gmail</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="mailto:Elorium.digital@gmail.com?subject=Demande%20de%20devis%20-%20Elorium%20Digital&body=Bonjour%20Elorium%20Digital%2C%0A%0AJe%20souhaite%20obtenir%20des%20informations%20/%20un%20devis.">Ou me contacter par Gmail</a>
       </div>
     </div>
   </div>
@@ -1032,6 +1067,25 @@ input,textarea,select,button{font:inherit}
     window.addEventListener(evt,startMusic,{once:true,passive:true})
   );
 })();
+</script>
+
+<a class="mobile-contact-cta" href="#contact" aria-label="Demander un devis gratuit">💬 Demander mon devis gratuit</a>
+
+<script>
+document.addEventListener("click", async function(e){
+  const btn = e.target.closest(".copy-email-btn");
+  if(!btn) return;
+  const email = btn.dataset.email || "Elorium.digital@gmail.com";
+  try {
+    await navigator.clipboard.writeText(email);
+    const old = btn.textContent;
+    btn.textContent = "✓ Adresse copiée";
+    btn.classList.add("copied");
+    setTimeout(() => { btn.textContent = old; btn.classList.remove("copied"); }, 2200);
+  } catch(err) {
+    window.prompt("Copiez cette adresse e-mail :", email);
+  }
+});
 </script>
 
 </body>
