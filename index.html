@@ -343,29 +343,7 @@ body.ready .hero-card{animation:heroIn .95s var(--ease-premium) .18s forwards}
 }
 </style>
 
-<style>
-/* ===== HALLOWEEN ELORIUM 2026 ===== */
-:root{--halloween:#ff6a00;--halloween2:#ff9d21;--purple:#6d28d9}
-body{background:radial-gradient(circle at 15% 5%,rgba(255,106,0,.13),transparent 25%),radial-gradient(circle at 88% 12%,rgba(109,40,217,.12),transparent 28%),linear-gradient(180deg,#080407,#0b0708 50%,#060406)!important}
-header{border-bottom-color:rgba(255,106,0,.22)}
-.hero{overflow:hidden}
-.hero:after{content:"🎃";position:absolute;right:4%;top:12%;font-size:clamp(70px,10vw,150px);filter:drop-shadow(0 0 28px rgba(255,106,0,.55));opacity:.88;z-index:-1;animation:pumpkinFloat 4s ease-in-out infinite alternate}
-.hero-grid:before{content:"🦇   🦇      🦇";position:absolute;left:8%;top:45px;font-size:clamp(18px,3vw,34px);letter-spacing:18px;opacity:.72;animation:batsFly 8s ease-in-out infinite alternate;pointer-events:none}
-.hero-card,.service,.pack,.step,.faq,.contact,.photo-price-card,.visit-counter-box{border-color:rgba(255,106,0,.20)!important;box-shadow:0 18px 60px rgba(0,0,0,.34),0 0 22px rgba(255,106,0,.035)}
-.hero-card{background:linear-gradient(155deg,rgba(255,106,0,.11),transparent 32%),linear-gradient(330deg,rgba(109,40,217,.08),transparent 38%),#120d10}
-.eyebrow,.service b,.step b,.label{color:var(--halloween2)!important}
-h1 em,.price,.photo-price,.visit-counter-box strong{color:#ffb14a!important}
-.btn-gold{background:linear-gradient(135deg,#ffb347,#ff6500)!important;color:#160b03!important;box-shadow:0 12px 34px rgba(255,106,0,.24)!important}
-.navlinks a:after,.section-head h2:after,.scroll-progress{background:linear-gradient(90deg,#ff6500,#ffb347)!important}
-.halloween-top{position:relative;padding:11px 15px;text-align:center;background:linear-gradient(90deg,#210b05,#4b1605,#210b05);border-bottom:1px solid rgba(255,138,32,.35);color:#ffd3a0;font-weight:800;letter-spacing:.08em;font-size:.8rem;overflow:hidden}
-.halloween-top:before,.halloween-top:after{content:"🕸️";position:absolute;top:-8px;font-size:38px;opacity:.7}.halloween-top:before{left:8px}.halloween-top:after{right:8px;transform:scaleX(-1)}
-.halloween-decor{position:fixed;inset:0;pointer-events:none;z-index:49;overflow:hidden}.halloween-decor .moon{position:absolute;right:-50px;top:120px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ffd36c,#ff8a00 55%,#d84900);box-shadow:0 0 60px rgba(255,119,0,.28);opacity:.18}.halloween-decor .fog{position:absolute;left:-10%;bottom:0;width:120%;height:120px;background:linear-gradient(transparent,rgba(180,165,190,.07),transparent);filter:blur(18px);animation:fogMove 10s ease-in-out infinite alternate}
-@keyframes pumpkinFloat{to{transform:translateY(16px) rotate(4deg)}}
-@keyframes batsFly{to{transform:translate(80px,18px)}}
-@keyframes fogMove{to{transform:translateX(7%)}}
-@media(max-width:700px){.halloween-top{font-size:.68rem;padding:9px 42px}.hero:after{right:-22px;top:6%;opacity:.45}.hero-grid:before{top:18px;left:3%;letter-spacing:5px}.halloween-decor .moon{width:110px;height:110px;right:-35px}}
-@media(prefers-reduced-motion:reduce){.hero:after,.hero-grid:before,.halloween-decor .fog{animation:none!important}}
-</style>
+
 
 <style>
 /* ===== CORRECTION LOGO ELORIUM ===== */
@@ -383,8 +361,8 @@ header .brand-logo{
   border-radius:14px !important;
   background:#0d0908;
   padding:3px;
-  border:1px solid rgba(255,157,33,.75) !important;
-  box-shadow:0 0 20px rgba(255,106,0,.32) !important;
+  border:1px solid rgba(231,208,155,.35) !important;
+  box-shadow:0 0 20px rgba(201,168,106,.15) !important;
   filter:brightness(1.18) contrast(1.08);
 }
 @media(max-width:700px){
@@ -415,8 +393,8 @@ header .brand-logo{
   max-width:88% !important;
   aspect-ratio:450/330;
   object-fit:cover !important;
-  border:1px solid rgba(255,157,33,.45);
-  box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 24px rgba(255,106,0,.14);
+  border:1px solid rgba(231,208,155,.25);
+  box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 24px rgba(201,168,106,.10);
 }
 @media(max-width:700px){
   header .brand-logo{
@@ -429,33 +407,7 @@ header .brand-logo{
 </style>
 
 
-<style>
-/* ===== OFFRE HALLOWEEN -10% ===== */
-.promo-halloween{
-  position:relative;
-  z-index:55;
-  padding:12px 18px;
-  text-align:center;
-  background:linear-gradient(90deg,#ff6500,#ff9d21,#ff6500);
-  color:#160900;
-  font-weight:900;
-  letter-spacing:.035em;
-  box-shadow:0 5px 24px rgba(255,106,0,.22);
-}
-.promo-halloween strong{font-size:1.08em}
-.promo-halloween .promo-code{
-  display:inline-block;
-  margin-left:8px;
-  padding:3px 9px;
-  border-radius:999px;
-  background:rgba(0,0,0,.82);
-  color:#ffd29b;
-}
-@media(max-width:700px){
-  .promo-halloween{font-size:.76rem;padding:10px 12px;line-height:1.45}
-  .promo-halloween .promo-code{margin:5px 0 0 5px}
-}
-</style>
+
 
 
 <style>
@@ -470,42 +422,20 @@ header .brand-logo{
   object-position:center 30% !important;
   object-fit:cover !important;
   border-radius:18px !important;
-  box-shadow:0 0 22px rgba(255,106,0,.20);
+  box-shadow:0 0 22px rgba(201,168,106,.12);
 }
 </style>
 
 <style>
-/* Contact visible, sans modifier le thème Halloween */
-.contact-reassurance{margin-top:16px;color:#e0cbb6;font-size:.9rem;line-height:1.6}
-.mobile-contact-cta{display:none;position:fixed;left:14px;right:14px;bottom:12px;z-index:119;padding:14px 18px;border-radius:999px;text-align:center;font-weight:900;color:#160b03;background:linear-gradient(135deg,#ffb347,#ff6500);box-shadow:0 12px 38px rgba(0,0,0,.55);border:1px solid rgba(255,190,105,.5)}
-#contact{scroll-margin-top:100px}
-@media(max-width:700px){body{padding-bottom:85px}.mobile-contact-cta{display:block}.elia-launch{bottom:83px}.elia-chat{bottom:153px;max-height:60vh}.hero .actions .btn{width:100%}.contact-reassurance{font-size:.82rem}}
+/* Contact plus visible */
+.contact-reassurance{margin-top:16px;color:#d8c8ba;font-size:.88rem}
+.mobile-contact-cta{display:none;position:fixed;bottom:12px;left:12px;right:12px;z-index:119;padding:13px 16px;text-align:center;border-radius:999px;background:linear-gradient(135deg,#ffb347,#ff6500);color:#160b03;font-weight:900;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+#contact{scroll-margin-top:90px}
+@media(max-width:700px){body{padding-bottom:76px}.mobile-contact-cta{display:block}.elia-launch{bottom:83px}.elia-chat{bottom:151px;max-height:60vh}.hero .actions .btn{width:100%}}
 </style>
-
-<style>
-/* ===== CONTACT TOUTES MESSAGERIES ===== */
-.universal-contact-box{
-  padding:20px;margin-bottom:16px;border:1px solid var(--line);border-radius:18px;
-  background:linear-gradient(135deg,rgba(255,106,0,.08),rgba(255,255,255,.018));
-}
-.universal-contact-box strong{display:block;font-size:1.08rem;color:var(--gold2);margin-bottom:6px}
-.universal-contact-box p{margin:0 0 14px!important}
-.universal-contact-actions{display:flex;gap:10px;flex-wrap:wrap}
-.universal-contact-actions .btn{flex:1;min-width:210px;cursor:pointer}
-.universal-contact-box small{display:block;margin-top:12px;color:var(--muted);word-break:break-all}
-.copy-email-btn.copied{border-color:#55d47c;color:#7bdc97}
-@media(max-width:700px){.universal-contact-actions{flex-direction:column}.universal-contact-actions .btn{width:100%;min-width:0}}
-</style>
-
 </head>
 <body>
-<div class="promo-halloween" role="status">
-🎃 OFFRE HALLOWEEN : <strong>-10 % sur toutes les prestations</strong> jusqu’au 1er novembre 2026 inclus 👻
-<span class="promo-code">OFFRE LIMITÉE</span>
-</div>
-
-<div class="halloween-top">🎃 HALLOWEEN CHEZ ELORIUM DIGITAL • CRÉATIONS QUI FONT FRISSONNER 👻</div>
-<div class="halloween-decor" aria-hidden="true"><div class="moon"></div><div class="fog"></div></div>
+<div class="fog"></div></div>
 
 
 <header>
@@ -537,7 +467,6 @@ header .brand-logo{
         <a class="btn btn-gold" href="#contact">💬 Demander mon devis gratuit</a>
         <a class="btn btn-outline" href="#services">Découvrir les services</a>
       </div>
-      <p class="contact-reassurance">✓ Devis gratuit et sans engagement · ✓ Demande simple en quelques clics</p>
     </div>
 
     <div class="hero-card">
@@ -576,31 +505,31 @@ header .brand-logo{
       <article class="pack">
         <div class="label">Essentiel</div><div class="price">79 €</div><h3>Pack Essentiel</h3>
         <ul><li>1 logo simple</li><li>1 carte de visite</li><li>3 visuels réseaux sociaux</li></ul>
-        <a class="btn btn-outline" target="_blank" rel="noopener" href="mailto:Elorium.digital@gmail.com?subject=Pack%20Essentiel%20-%2079%20euros&body=Bonjour%20Elorium%20Digital%2C%0A%0AJe%20souhaite%20obtenir%20des%20informations%20/%20un%20devis.">Choisir ce pack</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Pack%20Essentiel%20-%2079%20euros">Choisir ce pack</a>
       </article>
 
       <article class="pack">
         <div class="label">Réseaux</div><div class="price">129 €</div><h3>Pack Réseaux</h3>
         <ul><li>1 bannière</li><li>6 visuels réseaux sociaux</li><li>2 stories</li><li>1 photo de profil</li></ul>
-        <a class="btn btn-outline" target="_blank" rel="noopener" href="mailto:Elorium.digital@gmail.com?subject=Pack%20R%C3%A9seaux%20-%20129%20euros&body=Bonjour%20Elorium%20Digital%2C%0A%0AJe%20souhaite%20obtenir%20des%20informations%20/%20un%20devis.">Choisir ce pack</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Pack%20R%C3%A9seaux%20-%20129%20euros">Choisir ce pack</a>
       </article>
 
       <article class="pack featured">
         <div class="label">Site web</div><div class="price">249 €</div><h3>Pack Site Vitrine</h3>
         <ul><li>Site professionnel 1 page</li><li>Version mobile</li><li>Boutons de contact</li><li>Coordonnées intégrées</li></ul>
-        <a class="btn btn-gold" target="_blank" rel="noopener" href="mailto:Elorium.digital@gmail.com?subject=Pack%20Site%20Vitrine%20-%20249%20euros&body=Bonjour%20Elorium%20Digital%2C%0A%0AJe%20souhaite%20obtenir%20des%20informations%20/%20un%20devis.">Choisir ce pack</a>
+        <a class="btn btn-gold" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Pack%20Site%20Vitrine%20-%20249%20euros">Choisir ce pack</a>
       </article>
 
       <article class="pack">
         <div class="label">Business</div><div class="price">399 €</div><h3>Pack Business</h3>
         <ul><li>Site jusqu’à 5 pages</li><li>1 logo</li><li>1 carte de visite</li><li>5 visuels réseaux sociaux</li><li>Formulaire de contact</li></ul>
-        <a class="btn btn-outline" target="_blank" rel="noopener" href="mailto:Elorium.digital@gmail.com?subject=Pack%20Business%20-%20399%20euros&body=Bonjour%20Elorium%20Digital%2C%0A%0AJe%20souhaite%20obtenir%20des%20informations%20/%20un%20devis.">Choisir ce pack</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Pack%20Business%20-%20399%20euros">Choisir ce pack</a>
       </article>
 
       <article class="pack">
         <div class="label">Premium</div><div class="price">599 €</div><h3>Pack Premium</h3>
         <ul><li>Site complet</li><li>Identité visuelle</li><li>10 visuels réseaux sociaux</li><li>Flyers et bannière</li><li>Accompagnement de lancement</li></ul>
-        <a class="btn btn-outline" target="_blank" rel="noopener" href="mailto:Elorium.digital@gmail.com?subject=Pack%20Premium%20-%20599%20euros&body=Bonjour%20Elorium%20Digital%2C%0A%0AJe%20souhaite%20obtenir%20des%20informations%20/%20un%20devis.">Choisir ce pack</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Pack%20Premium%20-%20599%20euros">Choisir ce pack</a>
       </article>
     </div>
   </div>
@@ -626,7 +555,7 @@ header .brand-logo{
       <article class="photo-price-card photo-pack"><div class="photo-icon">🔥</div><h3>Pack 5 photos</h3><p>Une formule avantageuse pour une petite série.</p><div class="photo-price">35 €</div></article>
       <article class="photo-price-card photo-pack"><div class="photo-icon">👑</div><h3>Pack 10 photos</h3><p>Le pack complet pour restaurer toute une sélection.</p><div class="photo-price">60 €</div></article>
     </div>
-    <div class="photo-cta"><div><h3>Une photo à retoucher ?</h3><p>Envoyez votre photo et décrivez la retouche souhaitée pour recevoir un devis.</p></div><a class="btn btn-gold" target="_blank" rel="noopener" href="mailto:Elorium.digital@gmail.com?subject=Demande%20retouche%20photo&body=Bonjour%20Elorium%20Digital%2C%0A%0AJe%20souhaite%20obtenir%20des%20informations%20/%20un%20devis.">Envoyer ma photo</a></div>
+    <div class="photo-cta"><div><h3>Une photo à retoucher ?</h3><p>Envoyez votre photo et décrivez la retouche souhaitée pour recevoir un devis.</p></div><a class="btn btn-gold" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Demande%20retouche%20photo">Envoyer ma photo</a></div>
   </div>
 </section>
 
@@ -735,7 +664,7 @@ header .brand-logo{
       <div>
         <div class="eyebrow">Contact</div>
         <h2 style="font-size:clamp(2.2rem,4vw,3.7rem);line-height:1.05">Votre projet mérite une image à sa hauteur.</h2>
-        <p>Contactez Elorium Digital pour une demande de devis ou une création personnalisée.</p>
+        <p>Expliquez votre projet en quelques lignes : devis gratuit et sans engagement.</p>
       </div>
 
       <div class="contactbox">
@@ -746,18 +675,7 @@ header .brand-logo{
           <div class="hours-status"><span id="hoursDot" class="hours-dot"></span><strong id="hoursStatus">Vérification…</strong></div>
           <div class="hours-lines">Lundi au vendredi : 9h – 20h<br>Samedi : Fermé<br>Dimanche : Fermé</div>
         </div>
-        
-<div class="universal-contact-box">
-  <strong>📩 Contactez-moi avec votre messagerie préférée</strong>
-  <p>Gmail, Outlook, Yahoo, Orange, Apple Mail ou toute autre application de messagerie.</p>
-  <div class="universal-contact-actions">
-    <a class="btn btn-gold" href="mailto:Elorium.digital@gmail.com?subject=Demande%20de%20devis%20%E2%80%94%20Elorium%20Digital">✉️ Ouvrir ma messagerie</a>
-    <button class="btn btn-outline copy-email-btn" type="button" data-email="Elorium.digital@gmail.com">📋 Copier l’adresse e-mail</button>
-  </div>
-  <small>Elorium.digital@gmail.com</small>
-</div>
-
-<form class="elorium-contact-form" action="https://formsubmit.co/Elorium.digital@gmail.com" method="POST">
+        <form class="elorium-contact-form" action="https://formsubmit.co/Elorium.digital@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="Nouvelle demande - Elorium Digital">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
@@ -775,10 +693,10 @@ header .brand-logo{
             </select>
           </label>
           <label>Votre message<textarea name="Message" required maxlength="1500" placeholder="Décrivez votre projet ou votre demande..."></textarea></label>
-          <button class="btn btn-gold" type="submit">💬 Envoyer ma demande de devis gratuit</button>
+          <button class="btn btn-gold" type="submit">💬 Recevoir mon devis gratuit</button>
           <p class="contact-form-note">Votre demande sera transmise à Elorium Digital. Une confirmation du service d’envoi peut être nécessaire lors de la première utilisation.</p>
         </form>
-        <a class="btn btn-outline" target="_blank" rel="noopener" href="mailto:Elorium.digital@gmail.com?subject=Demande%20de%20devis%20-%20Elorium%20Digital&body=Bonjour%20Elorium%20Digital%2C%0A%0AJe%20souhaite%20obtenir%20des%20informations%20/%20un%20devis.">Ou me contacter par Gmail</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=Elorium.digital%40gmail.com&su=Demande%20de%20devis%20-%20Elorium%20Digital">Ou me contacter par Gmail</a>
       </div>
     </div>
   </div>
@@ -974,9 +892,8 @@ header .brand-logo{
     if(/devis|commande|projet/.test(q)){add('Pour un devis, remplissez le formulaire de contact avec votre nom, votre e-mail, le service souhaité et votre besoin. Je vous emmène au formulaire.');go('#contact');return;}
     if(/accueil|haut|home/.test(q)){add('Je vous ramène à l’accueil.');go('#accueil');return;}
     if(/bonjour|salut|bonsoir|hello|coucou/.test(q)){add('Bonjour 👋 Je suis Élia, l’assistante IA d’ELORIUM DIGITAL. Comment puis-je vous aider ? Vous pouvez me demander un tarif, un service, un devis ou les horaires.');return;}
-    if(/halloween|promotion|promo|10%|10 %|reduction|remise/.test(q)){add('🎃 Promotion Halloween : -10 % sur toutes les prestations jusqu’au 1er novembre 2026 inclus.');return;}
     if(/merci/.test(q)){add('Avec plaisir 😊 Si vous avez une autre question sur ELORIUM DIGITAL, je suis là.');return;}
-    add('Je n’ai pas encore compris cette demande. Je peux vous renseigner sur les services, les tarifs, la retouche photo, le dépannage PC, les horaires, la promotion Halloween, le contact ou un devis.');
+    add('Je n’ai pas encore compris cette demande. Je peux vous renseigner sur les services, les tarifs, la retouche photo, le dépannage PC, les horaires, le contact ou un devis.');
   }
   launch.addEventListener('click',()=>chat.classList.toggle('open'));
   close.addEventListener('click',()=>chat.classList.remove('open'));
@@ -1069,24 +986,6 @@ input,textarea,select,button{font:inherit}
 })();
 </script>
 
-<a class="mobile-contact-cta" href="#contact" aria-label="Demander un devis gratuit">💬 Demander mon devis gratuit</a>
-
-<script>
-document.addEventListener("click", async function(e){
-  const btn = e.target.closest(".copy-email-btn");
-  if(!btn) return;
-  const email = btn.dataset.email || "Elorium.digital@gmail.com";
-  try {
-    await navigator.clipboard.writeText(email);
-    const old = btn.textContent;
-    btn.textContent = "✓ Adresse copiée";
-    btn.classList.add("copied");
-    setTimeout(() => { btn.textContent = old; btn.classList.remove("copied"); }, 2200);
-  } catch(err) {
-    window.prompt("Copiez cette adresse e-mail :", email);
-  }
-});
-</script>
-
+<a class="mobile-contact-cta" href="#contact">💬 Demander mon devis gratuit</a>
 </body>
 </html>
